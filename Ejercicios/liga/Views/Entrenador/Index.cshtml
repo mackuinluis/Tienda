@@ -1,0 +1,12 @@
+@model List<Entrenador>
+@{
+    var entrenadores = Model;
+}    
+
+<h1>Lista de Entrenadores registrados</h1>
+
+@foreach (var item in entrenadores)
+{
+    <h2>@item.Nombre</h2>
+    <p>Pueblo de origen: @item.PuebloOrigen</p>
+}

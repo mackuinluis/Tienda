@@ -18,12 +18,28 @@ namespace liga.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            var entrenadores = _context.Entrenadores.ToList();
+
+            return View(entrenadores);
         }
 
         public IActionResult Registro()
         {
             return View();
+        }
+
+        [HttpPost]
+        public IActionResult Registro(Entrenador x)
+        {
+            if (ModelState.IsValid)
+            {
+                _context.Add(x);
+                _context.SaveChanges();
+
+                return RedirectToAction("Index");
+            }
+
+            return View(x);
         }
     }
 }
