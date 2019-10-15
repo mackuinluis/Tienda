@@ -36,7 +36,8 @@ namespace liga
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
-            services.AddDbContext<PokemonContext>(o => o.UseInMemoryDatabase("PokeWorld"));
+            services.AddDbContext<PokemonContext>(
+                o => o.UseNpgsql("Server=ec2-174-129-18-42.compute-1.amazonaws.com;Username=zfjzovqovquxqr;Password=9afc2fba15cd6e8b2a3887c5218c4487163700a7afc50550fab09e203b068693;Database=df1cdkrphk2hdr;Port=5432;SSL Mode=Require;Trust Server Certificate=true;"));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
