@@ -1,0 +1,12 @@
+@model List<Pokemon>
+@{
+    var pokemones = Model;
+}    
+
+<h1>Lista de Pokemones registrados</h1>
+
+@foreach (var item in pokemones)
+{
+    <h2>@item.Nombre</h2>
+    <img src="@item.Foto">
+}
