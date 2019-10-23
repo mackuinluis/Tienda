@@ -1,0 +1,10 @@
+@model List<Producto>
+
+<h1>Listado de productos</h1>
+
+
+@foreach (var item in Model)
+{
+    <h2>@item.Nombre / Precio: @item.Precio.ToString("c") (@item.Categoria.Nombre)</h2>
+
+}

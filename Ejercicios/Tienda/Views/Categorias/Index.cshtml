@@ -1,0 +1,16 @@
+@model List<Categoria>
+
+<h1>Listado de categorías</h1>
+
+
+@foreach (var item in Model)
+{
+    <h2>@item.Nombre (@item.Productos.Count)</h2>
+
+    <ul>
+        @foreach (var p in item.Productos)
+        {
+            <li>@p.Nombre</li>
+        }
+    </ul>
+}
